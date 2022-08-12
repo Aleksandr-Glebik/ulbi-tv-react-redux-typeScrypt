@@ -1,14 +1,18 @@
 import React, { useEffect } from "react"
-import { useDispatch } from "react-redux"
+import { useActions } from "../hooks/useActions"
+// import { useDispatch } from "react-redux"
 import { useTypedSelector} from "../hooks/useTypedSelector"
-import { fetchUsers } from "../store/action-creators/user"
+// import { fetchUsers } from "../store/action-creators/user"
+
 
 const UserList: React.FC = () => {
     const {error, loading, users} = useTypedSelector(state => state.user)
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
+
+    const {fetchUsers} = useActions()
 
     useEffect( () => {
-        dispatch(fetchUsers() as any)
+        fetchUsers()
     }, [])
 
     if (loading) {
