@@ -6,7 +6,7 @@ export interface TodoState {
     limit: number;
 }
 
-export enum TodoActionTypes{
+export enum TodoActionTypes {
     FETCH_TODOS = "FETCH_TODOS",
     FETCH_TODOS_SUCCESS = "FETCH_TODOS_SUCCESS",
     FETCH_TODOS_ERROR = "FETCH_TODOS_ERROR",
@@ -24,9 +24,9 @@ interface FetchTodoErrorAction {
     type: TodoActionTypes.FETCH_TODOS_ERROR;
     payload: string;
 }
-interface SetTodoPageErrorAction {
+interface SetTodoPageAction {
     type: TodoActionTypes.SET_TODOS_PAGE;
     payload: number;
 }
 
-export type TodoAction = FetchTodoAction | FetchTodoSuccessAction | FetchTodoErrorAction | SetTodoPageErrorAction
+export type TodoAction = FetchTodoAction | FetchTodoSuccessAction | FetchTodoErrorAction | SetTodoPageAction
